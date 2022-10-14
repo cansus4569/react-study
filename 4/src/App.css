@@ -1,0 +1,23 @@
+.box {
+  text-align: center;
+  width: 400px;
+  height: 400px;
+  border: 3px solid;
+}
+.img {
+  width: 300px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+.win {
+  border: 3px solid blue;
+}
+.lose {
+  border: 3px solid red;
+}
+.tie {
+  border: 3px solid gray;
+}
