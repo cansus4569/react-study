@@ -1,0 +1,29 @@
+// rafce
+import React from 'react'
+import { Button } from 'react-bootstrap';
+
+const LocButton = ({ cities, selectedCity, handleCityChange }) => {
+    return (
+        <div>
+            <Button
+                variant={`${selectedCity == null ? "outline-warning" : "warning"}`}
+                onClick={() => handleCityChange('current')}
+            >
+                Current
+            </Button>
+            {
+                cities.map((city) => (
+                    <Button
+                        variant={`${selectedCity == city ? "outline-warning" : "warning"}`}
+                        onClick={() => handleCityChange(city)}
+                    >
+                        {city}
+                    </Button>
+                ))
+            }
+        </div>
+    )
+}
+
+export default LocButton
+

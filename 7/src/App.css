@@ -1,0 +1,20 @@
+body{
+  background: url(http://www.matcl.com/files/attach/images/2791205/918/842/002/5fa8e235423edf719d83f401604b2320.jpg);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+.info{
+  border: 3px solid beige;
+  padding: 55px;
+  border-radius: 50px;
+  background-color: beige;
+  margin-bottom: 30px;
+}
