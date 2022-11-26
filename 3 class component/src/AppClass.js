@@ -1,5 +1,5 @@
 // rcc
-import React, { Component } from 'react';
+import React, { Component } from '../../2 game1 (function component)/node_modules/@types/react';
 import BookClass from './component/BookClass';
 
 export default class AppClass extends Component {
@@ -11,7 +11,6 @@ export default class AppClass extends Component {
             cnt: 0,
             no: 1,
         };
-        console.log("constructor");
     }
 
     increase = () => {
@@ -19,25 +18,14 @@ export default class AppClass extends Component {
             cnt: this.state.cnt + 1,
             no: this.state.no + 1,
         })
-        console.log("setState", this.state);
     };
 
-    componentDidMount() {
-        // init api call
-        console.log('componentDidMount');
-    }
-
-    componentDidUpdate() {
-        console.log('componentDidUpdate', this.state);
-    }
-
     render() {
-        console.log("render");
         return (
             <div>
                 <div>state:{this.state.cnt}</div>
                 <button onClick={this.increase}>Click me</button>
-                { this.state.cnt < 3 && <BookClass num={this.state.no}/> }
+                <BookClass num={this.state.no}/>
             </div>
         )
     }

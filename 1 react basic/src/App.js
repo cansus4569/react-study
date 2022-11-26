@@ -1,6 +1,6 @@
 import './App.css';
 import Book from './component/Book';
-import {useState} from "react";
+import {useState} from "../../2 game1 (function component)/node_modules/@types/react";
 
 function App() {
   let counter = 0;
