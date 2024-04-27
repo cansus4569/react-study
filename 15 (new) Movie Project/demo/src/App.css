@@ -1,0 +1,11 @@
+html,
+body {
+  background-color: #000000 !important;
+  color: white !important;
+}
+
+.nav-item {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
