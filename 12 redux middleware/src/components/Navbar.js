@@ -71,7 +71,7 @@ const Navbar = ({ auth, setAuth }) => {
             <div className='nav-menu-area'>
                 <ul className='menu'>
                     {menuList.map((menu, index) => (
-                        <li>
+                        <li key={index}>
                             <a href="#" key={index}>
                                 {menu}
                             </a>
