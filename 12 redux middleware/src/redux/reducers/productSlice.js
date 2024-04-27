@@ -16,6 +16,16 @@ export const fetchProducts = createAsyncThunk('product/fetchAll', async (searchQ
         thunkApi.rejectWithValue(error.message);
     }
 });
+
+export const fetchProductDetail = createAsyncThunk('product/fetchDetail', async (id, thunkApi) => {
+    try {
+        let url = `https://my-json-server.typicode.com/cansus4569/shopping-mall-study/products/${id}`;
+        let response = await fetch(url);
+        return await response.json();
+    } catch (error) {
+        thunkApi.rejectWithValue(error.message);
+    }
+})
 // 예전 방식
 // function productReducer(state = initialState, action) {
 //     let { type, payload } = action;
@@ -38,9 +48,6 @@ const productSlice = createSlice({
     name: "product",
     initialState,
     reducers: { // 비동기 작업을 처리하는 함수는 여기에 작성하지 않는다.
-        getSingleProduct(state, action) {
-            state.productDetail = action.payload.data;
-        }
     },
     extraReducers: (builder) => {
         builder
@@ -52,6 +59,17 @@ const productSlice = createSlice({
                 state.productList = action.payload;
             })
             .addCase(fetchProducts.rejected, (state, action) => {
+                state.isLoading = false;
+                state.error = action.payload;
+            })
+            .addCase(fetchProductDetail.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(fetchProductDetail.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.productDetail = action.payload;
+            })
+            .addCase(fetchProductDetail.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
             })

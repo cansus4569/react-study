@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-import authReducer from "./authReducer";
+import authSlice from "./authSlice";
 import productSlice from "./productSlice";
 
 
 export default combineReducers({
-    auth: authReducer,
+    auth: authSlice,
     product: productSlice
 });

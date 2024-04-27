@@ -4,7 +4,8 @@ import { Container, Row, Col } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { productAction } from '../redux/actions/productAction';
+// import { productAction } from '../redux/actions/productAction';
+import { fetchProductDetail } from '../redux/reducers/productSlice';
 
 const ProductDetail = () => {
     const dispatch = useDispatch();
@@ -18,7 +19,7 @@ const ProductDetail = () => {
         // let data = await response.json();
         // console.log(data);
         // setProduct(data);
-        dispatch(productAction.getProductDetail(id));
+        dispatch(fetchProductDetail(id));
     }
 
     useEffect(() => {
