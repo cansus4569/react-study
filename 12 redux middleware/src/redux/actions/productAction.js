@@ -1,16 +1,16 @@
-import { productActions } from "../reducers/productReducer";
+import { productActions } from "../reducers/productSlice";
 
-function getProducts(searchQuery) {
-    return async (dispatch, getState) => {
-        let url = `https://my-json-server.typicode.com/cansus4569/shopping-mall-study/products?q=${searchQuery}`;
-        let response = await fetch(url);
-        let data = await response.json();
-        // setProductList(data);
-        console.log(data);
-        // dispatch({ type: "GET_PRODUCT_SUCCESS", payload: { data } });
-        dispatch(productActions.getAllProduct({ data }));
-    }
-}
+// function getProducts(searchQuery) {
+//     return async (dispatch, getState) => {
+//         let url = `https://my-json-server.typicode.com/cansus4569/shopping-mall-study/products?q=${searchQuery}`;
+//         let response = await fetch(url);
+//         let data = await response.json();
+//         // setProductList(data);
+//         console.log(data);
+//         // dispatch({ type: "GET_PRODUCT_SUCCESS", payload: { data } });
+//         dispatch(productActions.getAllProduct({ data }));
+//     }
+// }
 
 function getProductDetail(id) {
     return async (dispatch, getState) => {
@@ -24,4 +24,4 @@ function getProductDetail(id) {
     }
 }
 
-export const productAction = { getProducts, getProductDetail };
+export const productAction = { getProductDetail };

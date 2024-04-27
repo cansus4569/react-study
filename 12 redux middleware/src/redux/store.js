@@ -4,7 +4,7 @@
 // import rootReducer from './reducers';
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "./reducers/authReducer";
-import productSlice from "./reducers/productReducer";
+import productSlice from "./reducers/productSlice";
 
 // let store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 
