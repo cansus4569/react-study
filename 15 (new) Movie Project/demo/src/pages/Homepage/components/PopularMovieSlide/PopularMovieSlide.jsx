@@ -2,11 +2,21 @@ import { Alert } from 'bootstrap';
 import { usePopularMoviesQuery } from '../../../../hooks/usePopularMovies';
 import MovieSlider from '../../../../common/MovieSlider/MovieSlider';
 import { responsive } from '../../../../constants/responsive';
+import { Spinner } from 'react-bootstrap';
 
 const PopularMovieSlide = () => {
   const { data, isLoading, isError, error } = usePopularMoviesQuery();
-  console.log(data);
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) {
+    return (
+      <div className="spinner-area">
+        <Spinner
+          animation="border"
+          variant="danger"
+          style={{ width: '5rem', height: '5rem' }}
+        />
+      </div>
+    );
+  }
   if (isError) return <Alert variant="danger">{error.message}</Alert>;
 
   return (
